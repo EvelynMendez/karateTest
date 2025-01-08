@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/DeleteUser[1:10]","start":1736371709208,"end":1736371709851,"title":"examples\/users\/DeleteUser[1:10] 16:28:29.208-16:28:29.851 delete an existing user"},{"id":2,"group":1,"content":"examples\/users\/GetUsers[1:10]","start":1736371710143,"end":1736371710361,"title":"examples\/users\/GetUsers[1:10] 16:28:30.143-16:28:30.361 get all users and show response"},{"id":3,"group":1,"content":"examples\/users\/PatchUser[1:10]","start":1736371710426,"end":1736371711080,"title":"examples\/users\/PatchUser[1:10] 16:28:30.426-16:28:31.080 modify an existing user"},{"id":4,"group":1,"content":"examples\/users\/PostUser[1:10]","start":1736371711128,"end":1736371711846,"title":"examples\/users\/PostUser[1:10] 16:28:31.128-16:28:31.846 create a new user"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
