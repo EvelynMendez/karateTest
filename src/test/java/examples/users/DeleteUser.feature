@@ -20,4 +20,3 @@ Feature: Delete an existing user
     # Verify that the response status is 200
 
     And print 'User with id 1 deleted successfully'
-    # Print a message indicating successful deletion
